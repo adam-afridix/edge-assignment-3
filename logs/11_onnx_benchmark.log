@@ -1,0 +1,7 @@
+ONNX Runtime 1.32.0 | high performance mode: True
+fp32                   acc  93.90% |  42.62 MB |  3.010 ms/img |      441 img/s
+ptq_int8               acc  93.91% |  10.77 MB |  1.777 ms/img |     1018 img/s
+qat_int8               acc  93.90% |  10.73 MB |  2.138 ms/img |      764 img/s
+unstructured_pruned    acc  93.93% |  42.62 MB |  3.108 ms/img |      435 img/s
+structured_pruned      acc  93.70% |  21.66 MB |  1.605 ms/img |      857 img/s
+Saved -> C:\Users\Adam\Documents\coding\edge comp\Assignment 3\results\onnx_benchmark.csv

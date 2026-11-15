@@ -1,0 +1,11 @@
+QAT ONNX: 21 weight tensors stored as INT8, 8 ReLU outputs re-quantized
+
+model                   size MB   max |diff| vs torch  same top-1 %
+fp32                      42.62               0.00000         100.0
+unstructured_pruned       42.62               0.00000         100.0
+structured_pruned         21.66               0.00000         100.0
+qat_int8                  10.73               0.23423         100.0
+ptq_int8                  10.77               0.19555         100.0
+(qat_int8 is compared with the INT8 PyTorch QAT model, ptq_int8 with the FP32 PyTorch model)
+
+ONNX models saved in C:\Users\Adam\Documents\coding\edge comp\Assignment 3\onnx_models

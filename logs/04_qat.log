@@ -1,0 +1,24 @@
+Device: cuda | backend: x86
+FP32 starting accuracy: 93.90%
+
+Fake-quant modules inserted, first block now looks like:
+ConvBnReLU2d(
+  64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+  (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (weight_fake_quant): FakeQuantize(
+    fake_quant_enabled=tensor([1], device='cuda:0', dtype=torch.uint8), observer_enabled=tensor([1], device='cuda:0', dtype=torch.uint8), quant_min=-128, quant_max=127, dtype=torch.qint8, qscheme=torch.per_channel_symmetric, ch_axis=0, scale=tensor([1.], device='cuda:0'), zero_point=tensor([0], device='cuda:0', dtype=torch.int32)
+    (activation_post_process): MovingAveragePerChannelMinMaxObserver(min_val=tensor([], device='cuda:0'), max_val=tensor([], device='cuda:0'))
+  )
+  (activation_post_process): FakeQuantize(
+    fake_quant_enabled=tensor([1], device='cuda:0', dtype=torch.uint8), observer_enabled=tensor([1], device='cuda:0', dtype=torch.uint8), quant_min=0, quant_max=127, dtype=torch.quint8, qscheme=torch.per_tensor_affine, ch_axis=-1, scale=tensor([1.], device='cuda:0'), zero_point=tensor([0], device='cuda:0', dtype=torch.int32)
+    (activation_post_process): MovingAverageMinMaxObserver(min_val=inf, max_val=-inf)
+  )
+)
+QAT epoch 1/5 | loss 0.5261 | train acc 99.12% | fake-quant test acc 93.77% | 118.0s
+QAT epoch 2/5 | loss 0.5243 | train acc 99.18% | fake-quant test acc 93.93% | 115.1s
+QAT epoch 3/5 | loss 0.5218 | train acc 99.32% | fake-quant test acc 93.92% | 114.7s
+QAT epoch 4/5 | loss 0.5166 | train acc 99.47% | fake-quant test acc 93.99% | 114.1s
+QAT epoch 5/5 | loss 0.5147 | train acc 99.54% | fake-quant test acc 93.93% | 71.0s
+
+Saved INT8 QAT model -> C:\Users\Adam\Documents\coding\edge comp\Assignment 3\models\qat_int8_scripted.pt
+QAT INT8 test acc: 93.88%   size 10.79 MB

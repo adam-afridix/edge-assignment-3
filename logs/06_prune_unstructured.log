@@ -1,0 +1,52 @@
+Original FP32 accuracy: 93.90%
+
+Iteration 1: target 20% | real sparsity 20.00% | acc right after pruning 93.90%
+  [iter 1] epoch 1/2 | loss 0.5359 | train 98.68% | test 93.68% | 26.6s
+  [iter 1] epoch 2/2 | loss 0.5254 | train 99.10% | test 94.03% | 25.5s
+
+Iteration 2: target 40% | real sparsity 40.00% | acc right after pruning 94.03%
+  [iter 2] epoch 1/2 | loss 0.5304 | train 98.89% | test 93.75% | 25.5s
+  [iter 2] epoch 2/2 | loss 0.5208 | train 99.29% | test 93.92% | 26.2s
+
+Iteration 3: target 60% | real sparsity 60.00% | acc right after pruning 93.71%
+  [iter 3] epoch 1/2 | loss 0.5254 | train 99.15% | test 93.95% | 25.9s
+  [iter 3] epoch 2/2 | loss 0.5176 | train 99.50% | test 94.07% | 25.3s
+
+Iteration 4: target 70% | real sparsity 70.00% | acc right after pruning 93.70%
+  [iter 4] epoch 1/2 | loss 0.5241 | train 99.23% | test 93.58% | 23.4s
+  [iter 4] epoch 2/2 | loss 0.5163 | train 99.53% | test 93.86% | 23.1s
+
+Iteration 5: target 80% | real sparsity 80.00% | acc right after pruning 89.35%
+  [iter 5] epoch 1/5 | loss 0.5350 | train 99.31% | test 93.70% | 26.1s
+  [iter 5] epoch 2/5 | loss 0.5219 | train 99.43% | test 93.54% | 25.8s
+  [iter 5] epoch 3/5 | loss 0.5189 | train 99.48% | test 93.97% | 25.3s
+  [iter 5] epoch 4/5 | loss 0.5140 | train 99.68% | test 94.03% | 25.6s
+  [iter 5] epoch 5/5 | loss 0.5126 | train 99.73% | test 93.95% | 25.6s
+
+Per-layer sparsity after pruning:
+  conv1                        (64, 3, 3, 3)          8.62% zeros
+  layer1.0.conv1               (64, 64, 3, 3)        32.17% zeros
+  layer1.0.conv2               (64, 64, 3, 3)        26.69% zeros
+  layer1.1.conv1               (64, 64, 3, 3)        26.21% zeros
+  layer1.1.conv2               (64, 64, 3, 3)        26.46% zeros
+  layer2.0.conv1               (128, 64, 3, 3)       28.61% zeros
+  layer2.0.conv2               (128, 128, 3, 3)      31.74% zeros
+  layer2.0.shortcut.0          (128, 64, 1, 1)       15.00% zeros
+  layer2.1.conv1               (128, 128, 3, 3)      33.36% zeros
+  layer2.1.conv2               (128, 128, 3, 3)      36.19% zeros
+  layer3.0.conv1               (256, 128, 3, 3)      37.35% zeros
+  layer3.0.conv2               (256, 256, 3, 3)      42.29% zeros
+  layer3.0.shortcut.0          (256, 128, 1, 1)      23.00% zeros
+  layer3.1.conv1               (256, 256, 3, 3)      44.68% zeros
+  layer3.1.conv2               (256, 256, 3, 3)      58.42% zeros
+  layer4.0.conv1               (512, 256, 3, 3)      75.40% zeros
+  layer4.0.conv2               (512, 512, 3, 3)      92.85% zeros
+  layer4.0.shortcut.0          (512, 256, 1, 1)      52.80% zeros
+  layer4.1.conv1               (512, 512, 3, 3)      96.00% zeros
+  layer4.1.conv2               (512, 512, 3, 3)      98.71% zeros
+  fc                           (10, 512)              5.70% zeros
+
+Total params 11,173,962 | non-zero 2,242,481 | conv/fc weight sparsity 80.00%
+Checkpoint size 42.70 MB (zipped 11.54 MB) vs FP32 42.70 MB (zipped 39.59 MB)
+Saved unstructured pruned model -> C:\Users\Adam\Documents\coding\edge comp\Assignment 3\models\unstructured_pruned.pth
+Saved -> C:\Users\Adam\Documents\coding\edge comp\Assignment 3\results\unstructured_iterations.csv

@@ -1,0 +1,41 @@
+ONNX Runtime 1.32.0 | high performance mode: True
+
+===== fp32.onnx  (6 images in 13.80 ms) =====
+test[5782]     true: horse       pred: horse        90.9%  OK
+test[6839]     true: ship        pred: ship         93.2%  OK
+test[8970]     true: airplane    pred: airplane     91.4%  OK
+test[9444]     true: horse       pred: horse        90.6%  OK
+test[6248]     true: bird        pred: bird         91.9%  OK
+test[7756]     true: dog         pred: dog          92.9%  OK
+
+===== ptq_int8.onnx  (6 images in 7.32 ms) =====
+test[5782]     true: horse       pred: horse        90.9%  OK
+test[6839]     true: ship        pred: ship         93.2%  OK
+test[8970]     true: airplane    pred: airplane     91.6%  OK
+test[9444]     true: horse       pred: horse        90.4%  OK
+test[6248]     true: bird        pred: bird         92.0%  OK
+test[7756]     true: dog         pred: dog          93.1%  OK
+
+===== qat_int8.onnx  (6 images in 9.16 ms) =====
+test[5782]     true: horse       pred: horse        91.6%  OK
+test[6839]     true: ship        pred: ship         92.8%  OK
+test[8970]     true: airplane    pred: airplane     91.5%  OK
+test[9444]     true: horse       pred: horse        91.1%  OK
+test[6248]     true: bird        pred: bird         91.9%  OK
+test[7756]     true: dog         pred: dog          92.5%  OK
+
+===== unstructured_pruned.onnx  (6 images in 15.42 ms) =====
+test[5782]     true: horse       pred: horse        92.4%  OK
+test[6839]     true: ship        pred: ship         89.3%  OK
+test[8970]     true: airplane    pred: airplane     91.9%  OK
+test[9444]     true: horse       pred: horse        90.9%  OK
+test[6248]     true: bird        pred: bird         91.3%  OK
+test[7756]     true: dog         pred: dog          93.5%  OK
+
+===== structured_pruned.onnx  (6 images in 8.38 ms) =====
+test[5782]     true: horse       pred: horse        91.6%  OK
+test[6839]     true: ship        pred: ship         92.7%  OK
+test[8970]     true: airplane    pred: airplane     90.2%  OK
+test[9444]     true: horse       pred: horse        91.0%  OK
+test[6248]     true: bird        pred: bird         92.0%  OK
+test[7756]     true: dog         pred: dog          75.2%  OK

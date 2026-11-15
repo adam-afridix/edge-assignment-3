@@ -1,0 +1,25 @@
+Quantization backend: x86
+Building PTQ model (calibration images = 2000) ...
+  calibration done on 2000 images
+Done in 41.7s
+
+Converted first block:
+BasicBlock(
+  (conv1): QuantizedConvReLU2d(64, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.012553670443594456, zero_point=0, padding=(1, 1))
+  (bn1): Identity()
+  (relu1): Identity()
+  (conv2): QuantizedConv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.03461543470621109, zero_point=74, padding=(1, 1))
+  (bn2): Identity()
+  (relu2): ReLU()
+  (shortcut): Sequential()
+  (skip_add): QFunctional(
+    scale=0.04100245609879494, zero_point=62
+    (activation_post_process): Identity()
+  )
+)
+
+Saved INT8 PTQ model -> C:\Users\Adam\Documents\coding\edge comp\Assignment 3\models\ptq_int8_scripted.pt
+
+FP32 test acc : 93.90%   size 42.70 MB
+PTQ  test acc : 93.88%   size 10.79 MB
+Accuracy drop : 0.02%

@@ -1,0 +1,16 @@
+Calibration with 100 images
+  calibration done on 100 images
+  INT8 test acc = 93.82%  (134.2s)
+Calibration with 500 images
+  calibration done on 500 images
+  INT8 test acc = 93.74%  (137.2s)
+Calibration with 1000 images
+  calibration done on 1000 images
+  INT8 test acc = 93.84%  (141.5s)
+Calibration with 2000 images
+  calibration done on 2000 images
+  INT8 test acc = 93.88%  (162.4s)
+Calibration with 5000 images
+  calibration done on 5000 images
+  INT8 test acc = 93.84%  (222.8s)
+Saved -> C:\Users\Adam\Documents\coding\edge comp\Assignment 3\results\ptq_calibration_size.csv

@@ -1,0 +1,25 @@
+Channel config (mid channels of each block):
+  before: [64, 64, 128, 128, 256, 256, 512, 512]
+  after : [32, 32, 64, 64, 128, 128, 256, 256]
+  forward check output shape: (2, 10)
+
+Params: 11,173,962 -> 5,679,306  (49.2% less)
+MACs  : 555.4M -> 281.7M  (49.3% less)
+
+Accuracy: original 93.90% | after channel pruning (no fine-tune) 29.43%
+
+Fine-tuning the pruned network ...
+  [struct] epoch 1/10 | loss 0.6814 | train 92.23% | test 89.39% | 20.8s
+  [struct] epoch 2/10 | loss 0.6551 | train 93.34% | test 90.38% | 19.2s
+  [struct] epoch 3/10 | loss 0.6328 | train 94.41% | test 89.99% | 19.0s
+  [struct] epoch 4/10 | loss 0.6072 | train 95.52% | test 90.80% | 19.1s
+  [struct] epoch 5/10 | loss 0.5862 | train 96.40% | test 92.32% | 20.6s
+  [struct] epoch 6/10 | loss 0.5612 | train 97.51% | test 92.78% | 19.2s
+  [struct] epoch 7/10 | loss 0.5448 | train 98.22% | test 93.41% | 19.4s
+  [struct] epoch 8/10 | loss 0.5316 | train 98.85% | test 93.52% | 19.3s
+  [struct] epoch 9/10 | loss 0.5244 | train 99.19% | test 93.74% | 19.0s
+  [struct] epoch 10/10 | loss 0.5204 | train 99.36% | test 93.69% | 18.9s
+
+Final structured-pruned accuracy: 93.69%
+Checkpoint size 21.73 MB vs FP32 42.70 MB
+Saved structured pruned model -> C:\Users\Adam\Documents\coding\edge comp\Assignment 3\models\structured_pruned.pth

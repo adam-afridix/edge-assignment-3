@@ -1,0 +1,6 @@
+model,test_accuracy_%,onnx_size_MB,latency_median_ms_bs1,latency_p95_ms_bs1,throughput_img_per_s_bs256
+fp32,93.9,42.616,3.01,3.417,440.5
+ptq_int8,93.91,10.768,1.777,2.125,1017.9
+qat_int8,93.9,10.726,2.138,2.748,764.1
+unstructured_pruned,93.93,42.616,3.108,3.607,435.2
+structured_pruned,93.7,21.659,1.605,1.91,856.5

@@ -1,0 +1,45 @@
+
+===== fp32  (batch of 6 in 30.94 ms) =====
+image         true        predicted      conf   top-3
+test[1615]    horse       horse         92.8%   horse 93%, automobile 1%, cat 1%  OK
+test[1544]    deer        deer          89.4%   deer 89%, bird 1%, frog 1%  OK
+test[5801]    truck       truck         92.0%   truck 92%, dog 1%, frog 1%  OK
+test[6403]    deer        deer          91.2%   deer 91%, horse 1%, frog 1%  OK
+test[6767]    automobile  automobile    90.3%   automobile 90%, dog 1%, bird 1%  OK
+test[7117]    frog        frog          88.6%   frog 89%, cat 4%, automobile 2%  OK
+
+===== ptq_int8  (batch of 6 in 33.41 ms) =====
+image         true        predicted      conf   top-3
+test[1615]    horse       horse         92.9%   horse 93%, automobile 1%, cat 1%  OK
+test[1544]    deer        deer          89.6%   deer 90%, bird 1%, frog 1%  OK
+test[5801]    truck       truck         91.9%   truck 92%, dog 1%, frog 1%  OK
+test[6403]    deer        deer          91.4%   deer 91%, horse 1%, frog 1%  OK
+test[6767]    automobile  automobile    90.6%   automobile 91%, bird 1%, dog 1%  OK
+test[7117]    frog        frog          89.0%   frog 89%, cat 4%, automobile 1%  OK
+
+===== qat_int8  (batch of 6 in 37.07 ms) =====
+image         true        predicted      conf   top-3
+test[1615]    horse       horse         92.9%   horse 93%, automobile 1%, truck 1%  OK
+test[1544]    deer        deer          89.3%   deer 89%, bird 1%, dog 1%  OK
+test[5801]    truck       truck         92.2%   truck 92%, cat 1%, automobile 1%  OK
+test[6403]    deer        deer          91.5%   deer 91%, horse 1%, frog 1%  OK
+test[6767]    automobile  automobile    90.6%   automobile 91%, airplane 1%, bird 1%  OK
+test[7117]    frog        frog          90.2%   frog 90%, cat 2%, automobile 1%  OK
+
+===== unstructured  (batch of 6 in 28.66 ms) =====
+image         true        predicted      conf   top-3
+test[1615]    horse       horse         90.9%   horse 91%, bird 1%, airplane 1%  OK
+test[1544]    deer        deer          91.8%   deer 92%, truck 1%, airplane 1%  OK
+test[5801]    truck       truck         92.0%   truck 92%, ship 1%, frog 1%  OK
+test[6403]    deer        deer          91.2%   deer 91%, cat 1%, horse 1%  OK
+test[6767]    automobile  automobile    91.5%   automobile 92%, dog 1%, horse 1%  OK
+test[7117]    frog        frog          91.8%   frog 92%, cat 2%, automobile 1%  OK
+
+===== structured  (batch of 6 in 20.97 ms) =====
+image         true        predicted      conf   top-3
+test[1615]    horse       horse         92.0%   horse 92%, automobile 1%, cat 1%  OK
+test[1544]    deer        deer          90.4%   deer 90%, horse 1%, bird 1%  OK
+test[5801]    truck       truck         92.1%   truck 92%, automobile 1%, airplane 1%  OK
+test[6403]    deer        deer          91.5%   deer 92%, horse 1%, cat 1%  OK
+test[6767]    automobile  automobile    90.9%   automobile 91%, dog 1%, horse 1%  OK
+test[7117]    frog        frog          93.6%   frog 94%, bird 1%, automobile 1%  OK

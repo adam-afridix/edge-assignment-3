@@ -1,0 +1,11 @@
+# Large generated artifacts (regenerate with run_all.ps1 / run_all.sh)
+data/
+models/
+onnx_models/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/

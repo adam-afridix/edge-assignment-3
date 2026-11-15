@@ -1,0 +1,4 @@
+model,test_accuracy_%,size_MB,zipped_size_MB,compression_x,total_params,nonzero_params,sparsity_%,latency_median_ms_bs1,latency_p95_ms_bs1,speedup_x,throughput_img_per_s_bs256,acc_airplane,acc_automobile,acc_bird,acc_cat,acc_deer,acc_dog,acc_frog,acc_horse,acc_ship,acc_truck
+fp32,93.9,42.702,39.592,1.0,11173962,11173962,0.0,10.912,15.897,1.0,378.3,94.6,96.8,92.1,85.6,96.3,90.8,96.1,94.7,96.4,95.6
+unstructured,93.93,42.702,11.541,1.0,11173962,2242481,79.93,11.299,18.904,0.97,381.2,95.2,97.1,90.8,86.0,96.1,91.1,96.2,94.9,95.9,96.0
+structured,93.7,21.734,20.14,1.96,5679306,5679306,0.0,9.368,11.995,1.16,684.2,93.4,96.3,92.0,87.3,95.9,89.5,96.2,94.3,96.6,95.5
